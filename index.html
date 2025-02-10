@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe Review App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bean Machine Reviews</h1>
+        <form id="reviewForm">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <textarea id="review" placeholder="Write your review..." required></textarea>
+
+            <div class="rating-section">
+                <label>Service:</label>
+                <div class="rating" data-category="service"></div>
+                <input type="hidden" id="service-rating" value="0">
+            </div>
+
+            <div class="rating-section">
+                <label>Food:</label>
+                <div class="rating" data-category="food"></div>
+                <input type="hidden" id="food-rating" value="0">
+            </div>
+
+            <div class="rating-section">
+                <label>Ambience:</label>
+                <div class="rating" data-category="ambience"></div>
+                <input type="hidden" id="ambience-rating" value="0">
+            </div>
+
+            <div class="rating-section">
+                <label>Atmosphere:</label>
+                <div class="rating" data-category="atmosphere"></div>
+                <input type="hidden" id="atmosphere-rating" value="0">
+            </div>
+
+            <button type="submit">Submit Review</button>
+        </form>
+
+        <div id="reviews"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
