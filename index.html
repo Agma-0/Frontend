@@ -3,46 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cafe Review App</title>
+    <title>Café Review System</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
 </head>
 <body>
     <div class="container">
-        <h1>Bean Machine Reviews</h1>
-        <form id="reviewForm">
-            <input type="text" id="name" placeholder="Your Name" required>
-            <textarea id="review" placeholder="Write your review..." required></textarea>
+        <header>
+            <h1>☕ Bean Machine Café Review Hub</h1>
+            <p>Share your experience and help others discover great coffee spots!</p>
+        </header>
 
-            <div class="rating-section">
-                <label>Service:</label>
-                <div class="rating" data-category="service"></div>
-                <input type="hidden" id="service-rating" value="0">
-            </div>
+        <section class="review-form">
+            <h2>🌟 Leave a Review</h2>
+            <form id="reviewForm">
+                <div class="form-row">
+                    <input type="text" id="name" placeholder="Your Name" required>
+                    <input type="text" id="cid" placeholder="Customer ID (CID)" required>
+                </div>
+                
+                <textarea id="review" placeholder="Write your review here..." required></textarea>
 
-            <div class="rating-section">
-                <label>Food:</label>
-                <div class="rating" data-category="food"></div>
-                <input type="hidden" id="food-rating" value="0">
-            </div>
+                <div class="rating-section">
+                    <label>Service:</label>
+                    <input type="number" id="service-rating" min="1" max="5" required>
+                    
+                    <label>Food:</label>
+                    <input type="number" id="food-rating" min="1" max="5" required>
+                    
+                    <label>Ambience:</label>
+                    <input type="number" id="ambience-rating" min="1" max="5" required>
 
-            <div class="rating-section">
-                <label>Ambience:</label>
-                <div class="rating" data-category="ambience"></div>
-                <input type="hidden" id="ambience-rating" value="0">
-            </div>
+                    <label>Atmosphere:</label>
+                    <input type="number" id="atmosphere-rating" min="1" max="5" required>
+                </div>
 
-            <div class="rating-section">
-                <label>Atmosphere:</label>
-                <div class="rating" data-category="atmosphere"></div>
-                <input type="hidden" id="atmosphere-rating" value="0">
-            </div>
+                <button type="submit">Submit Review</button>
+            </form>
+        </section>
 
-            <button type="submit">Submit Review</button>
-        </form>
-
-        <div id="reviews"></div>
+        <section class="reviews-container">
+            <h2>📜 Customer Reviews</h2>
+            <div id="reviews"></div>
+        </section>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
+
